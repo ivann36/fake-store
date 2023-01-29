@@ -9,9 +9,7 @@ import { Router } from "@angular/router"
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  editProduct() {
-    throw new Error('Method not implemented.');
-  }
+
   deleteProduct() {
     fetch('https://fakestoreapi.com/products/6', {
       method: "DELETE"

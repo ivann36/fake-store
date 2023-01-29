@@ -16,13 +16,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductComponent } from './product/product.component';
-
+import { EditProductComponent } from './edit-product/edit-product.component';
+import {MatInputModule} from '@angular/material/input'
+ 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
     PageNotFoundComponent,
-    ProductComponent
+    ProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { ProductComponent } from './product/product.component';
     MatButtonModule,
     MatCardModule,
     MatMenuModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

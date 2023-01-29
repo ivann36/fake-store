@@ -2,47 +2,9 @@
   <span>Fake Store</span>
 
   <div class="flex gap-5">
-    <button mat-icon-button class="flex text-center align-top">
-      <mat-icon>person</mat-icon>
+    <button mat-icon-button class="flex text-center " routerLink="/edit/0">
+      <mat-icon >add_box</mat-icon>
     </button>
-    <button mat-icon-button matBadge="8" matBadgeSize="small" [matMenuTriggerFor]="menu"
-      class=" text-xl flex text-center align-top">
-      <mat-icon>shopping_cart</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu" class="w-260 h-500">
-      <div class="p-3 divide-y divide-solid">
-        <div class="pb-3 flex justify-between">
-          <span>3 items</span>
-          <a>View cart</a>
-        </div>
-        <div class="py-3">
-          <div class="flex py-2 justify-between">
-            <span class="truncate block">
-              Adsfsad .afdsadsf sadf asdf
-            </span>
-            <span>{{150 | currency}}</span>
-          </div>
-          <div class="flex py-2  justify-between">
-            <span class="truncate block">
-              Adsfsad 
-            </span>
-            <span>{{50 | currency}}</span>
-          </div>
-          <div class="flex py-2  justify-between">
-            <span class="truncate block">
-              Adsfsad .afdsadsf sadf asdf
-            </span>
-            <span>{{150 | currency}}</span>
-          </div>
-        </div>
-        <div class="py-3 flex justify-between">
-          Total <span>{{50|currency}}</span>
-        </div>
-  
-      </div>        
-      
-
-    </mat-menu>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
