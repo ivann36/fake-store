@@ -1,0 +1,20 @@
+<div class="bg-stone-300 flex flex-col w-[80%] ml-auto mr-auto mt-1">
+    <p class="font-bold text-6xl">
+            {{ product.title }}
+    </p>
+    <p class="text-3xl text-ellipsis overflow-scroll">
+        Desription: {{product.description}}
+    </p>
+    <img [src]="product.image" class="max-w-[500px] h-auto w-auto ml-auto mr-auto">
+    <div class="flex justify-between mt-auto">
+        <p class="text-xl m-1">
+            {{product.price | currency }}
+        </p>
+        <button mat-flat-button color="primary" (click)="deleteProduct()" class="">
+            Delete product
+        </button>
+        <button mat-flat-button color="primary" (click)="editProduct()" class="">
+            Edit product
+        </button>
+    </div>
+</div>

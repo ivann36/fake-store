@@ -1,0 +1,47 @@
+<div class="m-10 flex justify-start gap-5">
+    <div>
+        <button mat-flat-button class="" color="accent" [matMenuTriggerFor]="sort">Sort: {{selectedSort}}</button>
+        <mat-menu #sort="matMenu">
+            <button (click)="onSortChange('asc')" mat-menu-item>Asc</button>
+            <button (click)="onSortChange('desc')" mat-menu-item>Desc</button>
+        </mat-menu>
+    </div>
+
+    <div>
+        <button mat-flat-button class="" color="accent" [matMenuTriggerFor]="category">Category:
+            {{selectedCategory}}</button>
+        <mat-menu #category="matMenu">
+            <button mat-menu-item *ngFor="let category of categories"
+                (click)="onCategoryChange(category)">{{category}}</button>
+        </mat-menu>
+    </div>
+
+    <div>
+        <button mat-flat-button class="" color="accent" [matMenuTriggerFor]="limit">Limit: {{selectedLimit}}</button>
+        <mat-menu #limit="matMenu">
+            <button (click)="onLimitChange(5)" mat-menu-item>5</button>
+            <button (click)="onLimitChange(10)" mat-menu-item>10</button>
+            <button (click)="onLimitChange(15)" mat-menu-item>15</button>
+        </mat-menu>
+    </div>
+</div>
+<div class="m-5 flex flex-wrap flex-row gap-5  justify-start text-white">
+
+    <mat-card *ngFor="let product of products" class="flex flex-shrink-0 flex-grow-0 basis-[300px] w-[300px] h-[500px]">
+        <mat-card-header class="font-bold text-2xl h-[100px] w-[300px] ">
+            <p class="truncate">{{ product.title }}</p>
+            
+        </mat-card-header>
+
+        <img [src]="product.image" class=" h-[300px] w-auto">
+        <div class="flex justify-between mt-auto">
+            <p class="text-xl m-1">
+                {{product.price | currency }}
+            </p>
+            <button [routerLink]="['/product', product.id]" [title]="product.title + ' details'" mat-flat-button
+                color="primary" class="">
+                Details
+            </button>
+        </div>
+    </mat-card>
+</div>
